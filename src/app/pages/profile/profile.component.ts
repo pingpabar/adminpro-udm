@@ -62,7 +62,8 @@ export class ProfileComponent implements OnInit {
 
     reader.onloadend = () => {
       // console.log( reader.result ); // Imagen en base 64
-      this.imagenTemp = reader.result;
+      const img: string = reader.result as string;
+      this.imagenTemp = img;
     };
   }
 
