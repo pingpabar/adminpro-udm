@@ -19,22 +19,26 @@ import { RegisterComponent } from './login/register.component';
 
 // Servicios
 import { ServiceModule } from './services/service.module';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent  // Añadido para lazy-load
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     APP_ROUTES,
-    PagesModule,
+    // PagesModule,  // comentado por lazy-load, porque se carga de manera dinámica
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    SharedModule   // Añadido para lazy-load
   ],
   providers: [],
   bootstrap: [AppComponent]
